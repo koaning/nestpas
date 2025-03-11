@@ -214,19 +214,6 @@ def example():
             
         print(f"Result with global concurrency limit: {result}")
     
-    # Example with mutation
-    data = [
-        {"a": 1, "b": 2},
-        {"a": 3, "b": 4},
-        {"a": 5, "b": 6}
-    ]
-    
-    result4 = alist(data) \
-        .mutate(c=lambda d: d['b'] + 1, 
-                x=lambda d: d['a'] + 2) \
-        .collect()
-    print(f"With mutation: {result4}")
-    
     # Run our examples in an existing event loop
     asyncio.run(async_example())
     asyncio.run(another_async_example())
